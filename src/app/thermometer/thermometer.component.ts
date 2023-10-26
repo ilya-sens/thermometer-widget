@@ -38,7 +38,13 @@ export class ThermometerComponent {
   private _curTemperature = 0;
 
   private calculateArrowHeadRotation() {
-    this.arrowHeadRotation = 270 * this.curTemperature / (this.maxTemperature - this.minTemperature);
+    const rotation = 270 * this.curTemperature / (this.maxTemperature - this.minTemperature);
+    // accept rotation only between 0 and 270
+    this.arrowHeadRotation = rotation < 0
+      ? 0
+      : rotation > 270
+        ? 270
+        : rotation;
   }
 
   arrowHeadRotation = 0;

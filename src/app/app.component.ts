@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.form.valueChanges
       .pipe(
-        debounceTime(200),
         distinctUntilChanged()
       ).subscribe(it => {
         if (it.minTemperature !== undefined) {
