@@ -47,12 +47,13 @@ $feet-radius: math.floor(math.sqrt(2 * $display-radius-number * $display-radius-
 
   &-arrow-head {
     transform-origin: -100% 50%;
-    rotate: -90deg;
+    rotate: -225deg;
     border-top: $border-value;
     width: calc($display-radius / 2);
     margin-left: calc($display-radius * 1.5);
     position: absolute;
     z-index: 2;
+    transition: transform ease-in-out 300ms;
   }
 }
 
