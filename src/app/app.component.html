@@ -1,1 +1,15 @@
-<thermometer/>
+<thermometer
+  [minTemperature]="minTemperature"
+  [maxTemperature]="maxTemperature"
+  [curTemperature]="curTemperature"/>
+
+<form [formGroup]="form">
+  <label for="minTemperature">minTemperature</label>
+  <input id="minTemperature" formControlName="minTemperature" type="number">
+
+  <label for="maxTemperature">maxTemperature</label>
+  <input id="maxTemperature" formControlName="maxTemperature" type="number">
+
+  <label for="curTemperature">curTemperature</label>
+  <input id="curTemperature" formControlName="curTemperature" type="number">
+</form>

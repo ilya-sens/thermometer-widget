@@ -55,3 +55,8 @@ $feet-radius: math.floor(math.sqrt(2 * $display-radius-number * $display-radius-
     z-index: 2;
   }
 }
+
+.current-temperature {
+  position: absolute;
+  bottom: 10px;
+}

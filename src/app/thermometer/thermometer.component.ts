@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'thermometer',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
   standalone: true
 })
 export class ThermometerComponent {
+  @Input() minTemperature = 0;
+  @Input() maxTemperature = 0;
+  @Input() curTemperature = 0;
 }
