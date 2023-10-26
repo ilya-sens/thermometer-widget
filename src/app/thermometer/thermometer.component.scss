@@ -1,0 +1,57 @@
+@use 'sass:math';
+
+$border-color: #202020;
+$border-thickness: 2px;
+$border-value: solid $border-thickness $border-color;
+$display-radius-number: 20;
+$display-radius: $display-radius-number + px;
+$feet-radius: math.floor(math.sqrt(2 * $display-radius-number * $display-radius-number)) + px;
+
+:host {
+  margin: 20px;
+}
+
+.thermometer {
+  &-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 105px;
+    background-color: #a0a0a0;
+  }
+
+  &-feet {
+    content: '\0020';
+    border-top: $border-value;
+    border-left: $border-value;
+    width: $feet-radius;
+    height: $feet-radius;
+    position: absolute;
+    transform-origin: 50% 50%;
+    transform: rotate(45deg);
+    z-index: 0;
+    margin-bottom: calc(-2 * $display-radius);
+  }
+
+  &-display {
+    position: relative;
+    width: calc($display-radius * 2);
+    height: calc($display-radius * 2);
+    border: $border-value;
+    border-radius: calc($display-radius + $border-thickness);
+    background-color: #eee;
+    z-index: 1;
+  }
+
+  &-arrow-head {
+    transform-origin: -100% 50%;
+    rotate: -90deg;
+    border-top: $border-value;
+    width: calc($display-radius / 2);
+    margin-left: calc($display-radius * 1.5);
+    position: absolute;
+    z-index: 2;
+  }
+}
